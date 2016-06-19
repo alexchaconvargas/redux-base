@@ -1,14 +1,14 @@
 import Hello from './components/hello.js';
-
+import App from './components/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
  
 import {Router, Route, hashHistory} from 'react-router';
-/*
-export default class Hello extends React.Component {
-  render() {
-    return <h1>Hello</h1>
-  }
-}*/
 
-ReactDOM.render(<Hello/>, document.getElementById('hello'));
+const routes = <Route component={App}>
+  <Route path="/" component={Hello} />
+</Route>;
+
+ReactDOM.render(
+	<Router history={hashHistory}>{routes}</Router>, 
+	document.getElementById('hello'));
