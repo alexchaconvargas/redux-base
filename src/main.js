@@ -13,7 +13,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 /*COMPONENTS*/
-import Hello from './components/hello.js';
+import Home from './components/home.js';
 import App from './components/app';
 
 injectTapEventPlugin();
@@ -38,7 +38,7 @@ store.dispatch({
 
 
 const routes = <Route component={App}>
-  <Route path="/" component={Hello} />
+  <Route path="/" component={Home} />
 </Route>;
 
 ReactDOM.render(
