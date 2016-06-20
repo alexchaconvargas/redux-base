@@ -8,9 +8,15 @@ import {Provider} from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import {mySaga} from './sagas'
 import reducer from './reducer';
+/*MATERIAL_UI*/
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 /*COMPONENTS*/
 import Hello from './components/hello.js';
 import App from './components/app';
+
+injectTapEventPlugin();
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -37,6 +43,8 @@ const routes = <Route component={App}>
 
 ReactDOM.render(
 	<Provider store={store}>
-	<Router history={hashHistory}>{routes}</Router>
+		<MuiThemeProvider muiTheme={getMuiTheme()}>
+			<Router history={hashHistory}>{routes}</Router>
+		</MuiThemeProvider>
 	</Provider>,
 	document.getElementById('hello'));
