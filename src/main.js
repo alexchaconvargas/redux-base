@@ -37,6 +37,6 @@ const routes = <Route component={App}>
 
 ReactDOM.render(
 	<Provider store={store}>
-	<Router history={hashHistory}>{routes}</Router>, 
+	<Router history={hashHistory}>{routes}</Router>
 	</Provider>,
 	document.getElementById('hello'));
