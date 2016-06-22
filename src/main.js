@@ -8,10 +8,18 @@ import {Provider} from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import {mySaga} from './sagas'
 import reducer from './reducer';
-/*COMPONENTS*/
+/*MATERIAL_UI*/
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+/*ROUTES*/
 import Home from './views/home/home.js';
+import Ofertas from './views/ofertas/ofertas.js';
+import Empresa from './views/empresa/empresa.js';
+import Candidatos from './views/candidatos/candidatos.js';
 import App from './app';
 
+injectTapEventPlugin();
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -33,10 +41,15 @@ store.dispatch({
 
 const routes = <Route component={App}>
   <Route path="/" component={Home} />
+  <Route path="/empresa" component={Empresa} />
+  <Route path="/candidatos" component={Candidatos} />
+  <Route path="/ofertas" component={Ofertas} />
 </Route>;
 
 ReactDOM.render(
-	<Provider store={store}>
+	<Provider store={store}>		
+		<MuiThemeProvider muiTheme={getMuiTheme()}>
 			<Router history={hashHistory}>{routes}</Router>
+		</MuiThemeProvider>
 	</Provider>,
 	document.getElementById('hello'));

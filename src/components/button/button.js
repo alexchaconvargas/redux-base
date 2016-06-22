@@ -4,7 +4,7 @@ import btn from './button.css'
 export default class CoolButton extends React.Component {
   render() {
     return (
-      <button className={btn.red}>{this.props.text}</button>
+      <button className={btn.blue}>{this.props.text}</button>
     )
   }
 }
