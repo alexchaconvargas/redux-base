@@ -1,5 +1,7 @@
 .red {
   font-size: 25px;
-  background-color: red;
+  background-color: #99f1ff;
+  width: 200px;
+  height: 80px;
   color: white;
 }
