@@ -9,8 +9,8 @@ import createSagaMiddleware from 'redux-saga';
 import {mySaga} from './sagas'
 import reducer from './reducer';
 /*COMPONENTS*/
-import Home from './components/home.js';
-import App from './components/app';
+import Home from './views/home/home.js';
+import App from './app';
 
 
 const sagaMiddleware = createSagaMiddleware();
